@@ -11,9 +11,6 @@ class MotocycleServices {
 
   public async createMotorcycle(motor: IMotorcycle) {
     const newMotorcycle = await this.model.create(motor);
-    if (!motor.status) {
-      newMotorcycle.status = false;
-    }
     return this.createMotorcycleDomain(newMotorcycle);
   }
 
